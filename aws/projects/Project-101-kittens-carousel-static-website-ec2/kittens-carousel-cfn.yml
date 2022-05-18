@@ -12,7 +12,7 @@ Description: |
   then deployed on Apache Web Server.  
   
 Resources:
-  WebSeverSecurityGroup:
+  WebServerSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: Enable HTTP for Apache Web Server and SSH for secure connection.
@@ -32,7 +32,7 @@ Resources:
       InstanceType: t2.micro
       KeyName: firstkey
       SecurityGroupIds:
-        - !Ref WebSeverSecurityGroup
+        - !Ref WebServerSecurityGroup
       Tags:
         - Key: Name
           Value: !Sub Web Server of ${AWS::StackName} Stack 
